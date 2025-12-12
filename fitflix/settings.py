@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-260-lse3w@=1+7zqke(l$b(kujsq&nw8y08#-0t&!(p#jm)jeh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fitflix.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
