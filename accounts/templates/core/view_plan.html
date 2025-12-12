@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+<div style="max-width:900px; margin:80px auto; padding:20px; color:white;">
+
+    <h1>{{ plan.goal }} — {{ plan.level }}</h1>
+    <p><strong>Duration:</strong> {{ plan.duration }}</p>
+    <p><small>Created: {{ plan.created_at }}</small></p>
+
+    <pre style="white-space: pre-wrap; background:#111; padding:20px; border-radius:10px; margin-top:20px;">
+{{ plan.generated_text }}
+    </pre>
+
+    <br>
+    <a href="{% url 'dashboard' %}" 
+       style="color:#2deef7; text-decoration:none;">
+       ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+{% endblock %}

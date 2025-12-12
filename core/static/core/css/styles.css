@@ -1,0 +1,183 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #0a0a0a;
+    color: white;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 40px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2deef7;
+  }
+  
+  /* HERO SECTION FIX — NO ZOOM */
+  /* ================= HERO SECTION ================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;      /* full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* no zoom issue */
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 5;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.cta-btn {
+    padding: 12px 25px;
+    background: #2deef7;
+    color: #000;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+  /* FEATURED WORKOUTS */
+  .workouts-section {
+    padding: 60px 30px;
+    text-align: center;
+  }
+  
+  .workout-cards {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+  }
+  
+  .workout-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover; 
+    border-radius: 10px;
+  }
+  
+  /* GENERATE SECTION */
+  .generate-section {
+    text-align: center;
+    padding: 60px 30px;
+  }
+  
+  .form-row {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  select {
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .generate-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #2deef7;
+    color: black;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+  
+  /* RESPONSIVE FIXES */
+  @media (max-width: 768px) {
+    .hero {
+      height: 60vh; /* smaller height for mobile */
+    }
+  
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      height: 50vh;
+    }
+  
+    .hero-content h1 {
+      font-size: 26px;
+    }
+  }
+  /* Fix login/register page spacing */
+.auth-page {
+    margin-top: 120px;   /* navbar ke neeche jagah */
+}

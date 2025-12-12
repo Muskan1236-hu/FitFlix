@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>FitFlix</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">FitFlix</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#workouts-section">Workouts</a>
+            <a href="#generate-section">AI Plans</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+            {% endif %}
+        </div>
+
+        <div class="auth-buttons">
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" style="margin-left:20px;">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}" style="margin-left:10px;">Signup</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- ⭐ HERO ONLY ON HOME PAGE ⭐ -->
+    {% if request.resolver_match.url_name == "index" %}
+        {% block hero %}{% endblock %}
+    {% endif %}
+
+    <!-- MAIN CONTENT -->
+    {% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+<div style="max-width:900px; margin:80px auto; padding:20px; color:white;">
+
+    <h1>Your Workout History</h1>
+
+    {% if plans %}
+        <ul style="margin-top:20px; line-height:2;">
+            {% for p in plans %}
+                <li style="margin-bottom:10px; background:#111; padding:15px; border-radius:10px;">
+                    <strong>{{ p.goal }} ({{ p.level }})</strong> — {{ p.duration }}  
+                    <br>
+                    <small>{{ p.created_at }}</small>
+                    <br><br>
+                    <a href="{% url 'view_plan' p.id %}" 
+                       style="background:#2deef7; padding:8px 12px; color:black; border-radius:6px; text-decoration:none;">
+                       View Plan
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No history yet. Generate your first workout!</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

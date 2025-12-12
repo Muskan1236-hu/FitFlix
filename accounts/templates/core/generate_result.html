@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+<div style="padding:80px 40px; max-width:900px; margin:auto;">
+
+    <h1 style="color:#2deef7; margin-bottom:20px;">Your AI Workout Plan</h1>
+
+    <div style="
+        background:#0d0d0d; 
+        padding:25px; 
+        border-radius:12px; 
+        color:white; 
+        line-height:1.7;
+        white-space:pre-wrap;
+        font-size:18px;
+    ">
+        {{ workout_data }}
+    </div>
+
+    <br><br>
+
+    <a href="/#generate-section"
+       style="
+            padding:12px 20px; 
+            background:#2deef7; 
+            color:black; 
+            border-radius:10px; 
+            text-decoration:none;
+       ">
+        Generate Again
+    </a>
+
+</div>
+
+{% endblock %}

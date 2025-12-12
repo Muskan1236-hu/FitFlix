@@ -1,0 +1,88 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <img src="{% static 'core/images/hero_bg.jpg' %}" class="hero-img">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Your AI Fitness<br>Journey Starts Here</h1>
+        <p>Personalized workouts, diet plans, and progress tracking — all powered by AI.</p>
+        <a href="#generate-section" class="cta-btn">Get Started</a>
+    </div>
+</section>
+
+
+<!-- FEATURED WORKOUTS -->
+<section class="workouts-section" id="workouts-section">
+    <h2>Featured Workouts</h2>
+
+    <div class="workout-cards">
+
+        <div class="workout-card">
+            <img src="{% static 'core/images/workout1.jpg' %}">
+            <h3>Strength Builder</h3>
+            <p>45 min · Strength</p>
+        </div>
+
+        <div class="workout-card">
+            <img src="{% static 'core/images/workout2.jpg' %}">
+            <h3>HIIT Burner</h3>
+            <p>20 min · HIIT</p>
+        </div>
+
+        <div class="workout-card">
+            <img src="{% static 'core/images/workout3.jpg' %}">
+            <h3>Yoga Flex</h3>
+            <p>30 min · Flexibility</p>
+        </div>
+
+        <div class="workout-card">
+            <img src="{% static 'core/images/workout4.jpg' %}">
+            <h3>Core Shred</h3>
+            <p>25 min · Core</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- GENERATE WORKOUT FORM -->
+<section class="generate-section" id="generate-section">
+    <h2>Generate Your Workout</h2>
+    <p>Tell us about your goals — AI will craft a workout for you.</p>
+
+    <form method="POST" action="{% url 'generate_workout' %}">
+        {% csrf_token %}
+
+        <label>Fitness Goal</label>
+        <select name="goal">
+            <option>Weight Loss</option>
+            <option>Muscle Gain</option>
+            <option>Flexibility</option>
+            <option>Strength</option>
+        </select>
+
+        <label>Experience Level</label>
+        <select name="level">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+        </select>
+
+        <label>Available Time</label>
+        <select name="duration">
+            <option>10 Minutes</option>
+            <option>20 Minutes</option>
+            <option>30 Minutes</option>
+            <option>45 Minutes</option>
+        </select>
+
+        <button type="submit" class="generate-btn">Generate</button>
+    </form>
+</section>
+
+{% endblock %}
