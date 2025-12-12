@@ -31,4 +31,6 @@ typing-inspection==0.4.2
 typing_extensions==4.15.0
 uritemplate==4.2.0
 urllib3==2.6.1
-gunicorn 
+
+gunicorn==21.2.0
+whitenoise==6.6.0
